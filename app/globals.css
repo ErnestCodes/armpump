@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0b0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2b35;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-fp-surface/80 backdrop-blur-xl border border-fp-border;
+  }
+
+  .font-display {
+    font-family: 'Nabla', cursive;
+  }
+}

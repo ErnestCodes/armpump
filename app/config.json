@@ -1,0 +1,23 @@
+{
+  "31337": {
+    "factory": {
+      "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+    },
+    "name": "Hardhat",
+    "explorer": ""
+  },
+  "84532": {
+    "factory": {
+      "address": ""
+    },
+    "name": "Base Sepolia",
+    "explorer": "https://sepolia.basescan.org"
+  },
+  "8453": {
+    "factory": {
+      "address": ""
+    },
+    "name": "Base",
+    "explorer": "https://basescan.org"
+  }
+}
