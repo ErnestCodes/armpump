@@ -37,12 +37,12 @@ export default function Home() {
             We help early-stage Web3 teams with funding, mentorship, and community to build the future of the decentralized web.
           </p>
 
-          <button className="group relative px-8 py-4 bg-white text-black font-bold rounded-lg transition-all hover:pr-10">
+          {/* <button className="group relative px-8 py-4 bg-white text-black font-bold rounded-lg transition-all hover:pr-10">
             Get Started
             <span className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all">
               →
             </span>
-          </button>
+          </button> */}
 
           {/* Glowing Arc & Logos Section */}
           <div className="mt-32 relative">
