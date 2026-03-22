@@ -1,21 +1,24 @@
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { Web3Provider } from "./context/Web3Context";
 import Header from "./components/layout/Header";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ["latin"],
+});
 
 export const metadata = {
-  title: "fun.pump | Token Launchpad on Base",
+  title: "Rauly Dealflow | Premium Web3 Portfolio",
   description:
-    "Create and trade tokens on the bonding curve. Launch your token in seconds.",
+    "A curated portfolio of high-conviction Web3 projects, transforming the digital landscape. Discover, connect, and scale with Rauly Dealflow.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-fp-bg text-fp-text min-h-screen`}>
+      <body className={`${roboto.className} bg-black text-white min-h-screen`}>
         <Web3Provider>
           <Header />
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

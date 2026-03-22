@@ -20,8 +20,8 @@ module.exports = {
         'fp-danger': '#ef4444',
       },
       fontFamily: {
-        'display': ['Nabla', 'cursive'],
-        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Roboto', 'sans-serif'],
+        'body': ['Roboto', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'monospace'],
       },
     },

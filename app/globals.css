@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 
 @layer base {
   html {
@@ -33,7 +32,4 @@
     @apply bg-fp-surface/80 backdrop-blur-xl border border-fp-border;
   }
 
-  .font-display {
-    font-family: 'Nabla', cursive;
-  }
 }

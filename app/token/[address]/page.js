@@ -14,6 +14,7 @@ import Button from "../../components/ui/Button";
 import { shortenAddress, formatEth } from "../../lib/utils";
 import { TARGET_ETH, TOKEN_LIMIT, TOTAL_SUPPLY } from "../../lib/constants";
 import { getTokenImage } from "../../lib/pinata";
+import { DEMO_TOKENS } from "../../lib/demo-data";
 
 export default function TokenDetailPage({ params }) {
   const { address } = use(params);
@@ -25,6 +26,17 @@ export default function TokenDetailPage({ params }) {
 
   useEffect(() => {
     async function fetchToken() {
+      // Check for demo data first
+      const demoToken = DEMO_TOKENS.find(t => t.token.toLowerCase() === address.toLowerCase());
+      if (demoToken) {
+        setToken(demoToken);
+        setImage(demoToken.image);
+        // Mock a cost for demo tokens (0.0001 ETH per token)
+        setCost(ethers.parseEther("0.0001"));
+        setLoading(false);
+        return;
+      }
+
       if (!factory) return;
       try {
         const sale = await factory.tokenToSale(address);
@@ -42,6 +54,7 @@ export default function TokenDetailPage({ params }) {
         const storedImage = getTokenImage(address);
         if (storedImage) setImage(storedImage);
       } catch (err) {
+        console.error("Token fetch error:", err);
         toast.error("Failed to load token data");
       } finally {
         setLoading(false);
@@ -51,6 +64,10 @@ export default function TokenDetailPage({ params }) {
   }, [factory, address]);
 
   async function handleBuy(amount) {
+    if (token?.isDemo) {
+      toast.error("Buying is disabled for demo tokens");
+      return;
+    }
     if (!signer || !factory) return;
 
     const toastId = toast.loading("Preparing transaction...");
