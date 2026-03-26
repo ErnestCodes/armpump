@@ -2,6 +2,7 @@
 
 import { projects } from "./lib/dealflow-data";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -170,9 +171,11 @@ export default function Home() {
                       <span className="text-[10px] uppercase tracking-widest font-black text-white/30">Raised</span>
                       <span className="text-sm font-mono font-bold text-fp-success">{project.raised}</span>
                     </div>
-                    <button className="text-[10px] font-bold text-fp-accent flex items-center gap-2 group/btn hover:gap-3 transition-all uppercase tracking-widest">
-                      Details <span>→</span>
-                    </button>
+                    <Link href={`/token/${project.address}`}>
+                      <button className="text-[10px] font-bold text-fp-accent flex items-center gap-2 group/btn hover:gap-3 transition-all uppercase tracking-widest">
+                        Details <span>→</span>
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -190,9 +193,10 @@ export default function Home() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {projects.filter(p => !p.image).map((project, index) => (
-                  <div 
+                  <Link 
                     key={index}
-                    className="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all group"
+                    href={`/token/${project.address}`}
+                    className="p-6 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all group block cursor-pointer"
                   >
                     <div className="flex justify-between items-start mb-4">
                       <h4 className="font-bold text-white/80 group-hover:text-white transition-colors">{project.name}</h4>
@@ -205,7 +209,7 @@ export default function Home() {
                       <span className="text-white/20 uppercase tracking-widest">Raised</span>
                       <span className="font-mono text-fp-success/70 font-bold">{project.raised}</span>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </>
@@ -213,9 +217,11 @@ export default function Home() {
           
           {/* Bottom Button */}
           <div className="mt-20 flex justify-center">
-             <button className="px-6 py-2 rounded-full border border-white/10 hover:border-fp-accent/50 text-xs font-bold text-fp-text-dim hover:text-white transition-all">
-              Contact Us
-             </button>
+             <a href="https://cal.com/rauly-dealflow/30min" target="_blank" rel="noopener noreferrer">
+               <button className="px-6 py-2 rounded-full border border-white/10 hover:border-fp-accent/50 text-xs font-bold text-fp-text-dim hover:text-white transition-all">
+                Contact Us
+               </button>
+             </a>
           </div>
         </section>
 
@@ -223,6 +229,26 @@ export default function Home() {
         <footer className="border-t border-white/5 py-20 px-6">
            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="font-display text-xl text-fp-accent">Rauly Dealflow</div>
+              
+              <div className="flex items-center gap-6">
+                <a 
+                  href="mailto:raulycrypto@gmail.com" 
+                  className="text-white/40 hover:text-fp-accent transition-colors p-2 rounded-full hover:bg-white/5"
+                  title="Email"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/rauly-victorio-802442247?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white/40 hover:text-fp-accent transition-colors p-2 rounded-full hover:bg-white/5"
+                  title="LinkedIn"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </div>
+
               {/* <div className="flex gap-8 text-xs font-medium text-fp-text-dim">
                 <a href="#" className="hover:text-white">Features</a>
                 <a href="#" className="hover:text-white">Developer</a>

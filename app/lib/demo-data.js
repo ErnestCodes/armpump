@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { projects } from "./dealflow-data";
 
 // Realistic dummy data for tokens
 export const DEMO_TOKENS = [
@@ -89,5 +89,17 @@ export const DEMO_TOKENS = [
     isOpen: true,
     image: null,
     isDemo: true
-  }
+  },
+  // Add projects from dealflow-data
+  ...projects.map((p, i) => ({
+    index: 10000 + i,
+    token: p.address,
+    name: p.name,
+    creator: "0x1111111111111111111111111111111111111111", // Default creator
+    sold: ethers.parseEther("600000"), // Mock sold amount
+    raised: ethers.parseEther(p.raised.replace(/[^0-9.]/g, '') || "1.0"), // Convert raised string to ETH if possible, else default 1.0
+    isOpen: true, // Most seem to be active
+    image: p.image || null,
+    isDemo: true
+  }))
 ];
