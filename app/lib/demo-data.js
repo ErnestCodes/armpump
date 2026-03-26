@@ -1,3 +1,4 @@
+import { ethers } from "ethers";
 import { projects } from "./dealflow-data";
 
 // Realistic dummy data for tokens

@@ -139,8 +139,8 @@ export default function TokenDetailPage({ params }) {
     );
   }
 
-  const soldNum = parseFloat(ethers.formatEther(token.sold));
-  const raisedNum = parseFloat(ethers.formatEther(token.raised));
+  const soldNum = token.sold ? parseFloat(ethers.formatEther(token.sold)) : 0;
+  const raisedNum = token.raised && typeof token.raised !== 'string' ? parseFloat(ethers.formatEther(token.raised)) : 0;
 
   return (
     <div>
