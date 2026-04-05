@@ -104,3 +104,30 @@ export const DEMO_TOKENS = [
     isDemo: true
   }))
 ];
+
+export const BINANCE_VERIFY_DATA = [
+  {
+    name: "Rauly",
+    handle: "@raulycrypto",
+    role: "Director",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alyssa",
+    status: "Verified",
+    joined: "Member since 2017"
+  },
+  {
+    name: "Jordan Kao",
+    handle: "@mrjordankao",
+    role: "VP Sales & Outreach",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan",
+    status: "Verified",
+    joined: "Member since 2018"
+  },
+  {
+    name: "Alyssa Fuentes",
+    handle: "@lyssabeep",
+    role: "Growth Specialist",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rauly",
+    status: "Verified",
+    joined: "Member since 2019"
+  }
+];

@@ -18,6 +18,8 @@ module.exports = {
         'fp-success': '#22c55e',
         'fp-warning': '#f59e0b',
         'fp-danger': '#ef4444',
+        'binance-yellow': '#FCD535',
+        'binance-yellow-hover': '#e2bf2d',
       },
       fontFamily: {
         'display': ['Roboto', 'sans-serif'],
